@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Created with love by: An-Khuong
 
-One or two sentence summary of your project.
+Brief: Let's discover the list of the latest movies, using Movie DB API. This is very similar to Google News used Js that you do in week 3, but now we use React.
 
 ## Video Walkthrough
 
