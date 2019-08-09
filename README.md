@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Created with love by: An-Khuong
 
-Brief: Let's discover the list of the latest movies, using Movie DB API. This is very similar to Google News used Js that you do in week 3, but now we use React.
+Let's discover the list of the latest movies, using Movie DB API. This is very similar to Google News and was built using React.
 
 ## Video Walkthrough
 
@@ -29,20 +29,20 @@ The following **required** functionalities are completed (this is a sample):
 The following **optional** features are implemented:
 
 - [x] Add favicon to the page
-- [x] The user can enter a term into a search box to filter the currently loaded movies by search term. E.g.; the user can type "mar" and the results are reduced to show "Captain Marvel".
-- [x] The user can change the "source" from "Currently Playing" movies to "Top Rated" movies (or any other of the endpoints supplied by MovieDB).
-- [x] Sort by Rating and Popularity (from Lowest to Highest and Vice Versa)
-- [x] Have Year, Rating as a slider. Change the display dynamically when the slider is changed. You could use [React Input Range package](https://www.npmjs.com/package/react-input-range) for this task.
+- [] The user can enter a term into a search box to filter the currently loaded movies by search term. E.g.; the user can type "mar" and the results are reduced to show "Captain Marvel".
+- [] The user can change the "source" from "Currently Playing" movies to "Top Rated" movies (or any other of the endpoints supplied by MovieDB).
+- [] Sort by Rating and Popularity (from Lowest to Highest and Vice Versa)
+- [] Have Year, Rating as a slider. Change the display dynamically when the slider is changed. You could use [React Input Range package](https://www.npmjs.com/package/react-input-range) for this task.
 
 The following **additional** features are implemented:
 
-- [x] List anything else that you can get done to improve the page!
-- [x] Rocket 1: Pagination.
-      Pagination: Replace the "See More" with a page control, with a previous and next Button at the end. Click it will move user to the next 20 (or previous 20) movies. Remember at first load, the Previous button should be disabled.
-      In addition to Previous and Next, use Number Pagination. Click on Number 3 will get them to Page3 and display movies 61st - 79th.
-- [x] Rocket 2: Routing
-      For each movie, include a link (movie/id) to display the full Movie Info on another page (URL). Use React Router for this. You'll also have to figure out how to retrieve the parameters from the URL.
-      This last one is a topic that we'll discuss in depth next week, but feel free to get acquainted now. :)
+- [] List anything else that you can get done to improve the page!
+- [] **Rocket 1: Pagination**.
+  Pagination: Replace the "See More" with a page control, with a previous and next Button at the end. Click it will move user to the next 20 (or previous 20) movies. Remember at first load, the Previous button should be disabled.
+  In addition to Previous and Next, use Number Pagination. Click on Number 3 will get them to Page3 and display movies 61st - 79th.
+- [] **Rocket 2: Routing**
+  For each movie, include a link (movie/id) to display the full Movie Info on another page (URL). Use React Router for this. You'll also have to figure out how to retrieve the parameters from the URL.
+  This last one is a topic that we'll discuss in depth next week, but feel free to get acquainted now. :)
 
 ## Time Spent and Lessons Learned
 

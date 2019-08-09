@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import genres from "../utils/genres";
+// console.log("redddd", genres);
 
 export default class MovieCard extends Component {
   render() {
@@ -15,26 +17,34 @@ export default class MovieCard extends Component {
         vote_average
       }
     } = this.props;
+
+    // console.log("genres line 21 ----", genres);
+    // console.log("genre_ids line 22 ----", genre_ids);
+
+    const filteredGenres = genres.filter(genre => genre_ids.includes(genre.id));
+    const names = filteredGenres.map(({ name }) => name);
+    // const namessss = names.map(name => <h1>{name}</h1>);
+
     return (
       <div>
         <h1>{title}</h1>
         <p>{overview}</p>
         <p>
-          {genre_ids.map(el => {
+          {names.map(el => {
             return `${el} `;
           })}
         </p>
-        <p>{popularity}</p>
-        <p>{vote_count}</p>
-        <p>{vote_average}</p>
-        <p>{release_date}</p>
+        <p>popularity {popularity}</p>
+        <p>vote Count {vote_count}</p>
+        <p>vote Average {vote_average}</p>
+        <p>release date {release_date}</p>
         <img
           alt={title}
-          src={`https://image.tmdb.org/t/p/w500/${backdrop_path}?api_key=4c5b4a5e627748117d4b24082672a9b4`}
+          src={`https://image.tmdb.org/t/p/w500/${backdrop_path}?api_key=f0a2a5636159ed7a77518d40e60ef4b1`}
         />
         <img
           alt={title}
-          src={`https://image.tmdb.org/t/p/w500/${poster_path}?api_key=4c5b4a5e627748117d4b24082672a9b4`}
+          src={`https://image.tmdb.org/t/p/w500/${poster_path}?api_key=f0a2a5636159ed7a77518d40e60ef4b1`}
         />
       </div>
     );
