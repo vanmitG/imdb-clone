@@ -9,19 +9,51 @@ export default class GenreSelectionGroup extends Component {
       resetFilterdMoviesToAllMovies
     } = this.props;
     return (
-      <div className="genresDisplay">
-        <button onClick={() => resetFilterdMoviesToAllMovies()}>All</button>
-
-        {genres.map(el => {
-          return (
-            <GenreButton
-              filterMovieByGenre={filterMovieByGenre}
-              id={el.id}
-              name={el.name}
-              num={el.num}
-            />
-          );
-        })}
+      <div className="row">
+        <div className="col s12 m12 hide-on-large-only">
+          <div class="card-panel teal lighten-3 ">
+            <div className="genresDisplay">
+              <button
+                className="waves-effect waves-light btn"
+                onClick={() => resetFilterdMoviesToAllMovies()}
+              >
+                All
+              </button>
+              {genres.map(el => {
+                return (
+                  <GenreButton
+                    filterMovieByGenre={filterMovieByGenre}
+                    id={el.id}
+                    name={el.name}
+                    num={el.num}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="col h3 hide-on-med-and-down">
+            <div class="card-panel teal lighten-3 ">
+              <button
+                className="waves-effect waves-light btn"
+                onClick={() => resetFilterdMoviesToAllMovies()}
+              >
+                All
+              </button>
+              {genres.map(el => {
+                return (
+                  <GenreButton
+                    filterMovieByGenre={filterMovieByGenre}
+                    id={el.id}
+                    name={el.name}
+                    num={el.num}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

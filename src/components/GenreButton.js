@@ -8,6 +8,7 @@ export default class GenreButton extends Component {
     return (
       <div>
         <button
+          className="waves-effect waves-light btn-small"
           onClick={() => filterMovieByGenre(id)}
         >{`${name} (${num})`}</button>
       </div>

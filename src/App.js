@@ -4,6 +4,7 @@ import MovieList from "./components/MovieList";
 import NabBar from "./components/NavBar";
 import genres from "./utils/genres";
 import GenreSelectionGroup from "./components/GenreSelectionGroup";
+// import M from "materialize-css/dist/js/materialize.min.js";
 
 //this needed when working with first object in array
 // const movie = require("./movie.json");
@@ -16,26 +17,27 @@ export default class App extends Component {
     isLoading: true,
     isErrored: false,
     page: 1,
-    movieCat: [
+    movieSoures: [
       { id: 1, name: "top_rated", lable: "Top Rated" },
       { id: 2, name: "latest", lable: "Latest" },
       { id: 3, name: "now_playing", lable: "Now Playing" },
       { id: 4, name: "popular", lable: "Popular" },
       { id: 5, name: "upcoming", lable: "Upcoming" }
     ],
-    defaultMovieCat: "top_rated"
+    defaultMovieSource: "top_rated"
   };
   componentDidMount() {
     this.getMovies();
   }
-  getMovieCatergory(id) {
-    console.log("Moive Catergory ID");
-    console.log("Moive Catergory name");
+  getMovieCatergory(name) {
+    // console.log("Moive Catergory ID", Source.id);
+    console.log("Moive Catergory name", name);
+    // console.log("Moive Catergory label", Source.lable);
   }
   async getMovies() {
     const api_key = "f0a2a5636159ed7a77518d40e60ef4b1";
     const url = ` https://api.themoviedb.org/3/movie/${
-      this.state.defaultMovieCat
+      this.state.defaultMovieSource
     }?api_key=${api_key}&page=${this.state.page}`;
     try {
       const response = await fetch(url);
@@ -105,25 +107,46 @@ export default class App extends Component {
     if (!this.state.isLoading) {
       return (
         <div className="App">
-          <NabBar filterMovie={this.filterMovie} />
-          <h1>Movie List</h1>
-          <h3>{`${this.state.movies.length} movies total`}</h3>
-
-          <button onClick={() => this.getMovieCatergory(4)}>popular</button>
-
-          <GenreSelectionGroup
-            genres={this.state.genresData}
-            filterMovieByGenre={this.filterMovieByGenre}
-            resetFilterdMoviesToAllMovies={this.resetFilterdMoviesToAllMovies}
+          <NabBar
+            filterMovie={this.filterMovie}
+            movieSoures={this.state.movieSoures}
+            getMovieCatergory={this.getMovieCatergory}
           />
+          {/* <h3>{`${this.state.movies.length} movies total`}</h3> */}
 
-          <MovieList movies={this.state.movies} />
-          {
-            <button onClick={() => this.getMoreMovies(this.state.movieCat[4])}>
+          <div className="fixedGenres section">
+            <GenreSelectionGroup
+              genres={this.state.genresData}
+              filterMovieByGenre={this.filterMovieByGenre}
+              resetFilterdMoviesToAllMovies={this.resetFilterdMoviesToAllMovies}
+            />
+          </div>
+          <div className="row section">
+            <div className="col s12 m12 l12">""</div>
+            <div className="right col s12 m12 l10">
+              <MovieList movies={this.state.movies} />
+            </div>
+          </div>
+
+          <footer class="page-footer teal">
+            <button
+              class="waves-effect waves-light btn"
+              onClick={() => this.getMoreMovies(this.state.defaultMovieSource)}
+            >
               More...
             </button>
-          }
-        </div>
+            <div class="footer-copyright teal darken-4">
+              <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">
+                  More Links
+                </a>
+              </div>
+            </div>
+          </footer>
+
+          {}
+        </div> //</app>
       );
     } else {
       return (
