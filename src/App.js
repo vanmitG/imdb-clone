@@ -132,8 +132,8 @@ export default class App extends Component {
               resetFilterdMoviesToAllMovies={this.resetFilterdMoviesToAllMovies}
             />
           </div>
-          <div className="row section">
-            <div className="col s12 m12 l12">""</div>
+          <div className="row ">
+            <div className="SectionMarginTop">""</div>
             <div className="right col s12 m12 l10">
               <MovieList movies={this.state.movies} />
             </div>

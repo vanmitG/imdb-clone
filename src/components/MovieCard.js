@@ -33,7 +33,7 @@ export default class MovieCard extends Component {
     // const namessss = names.map(name => <h1>{name}</h1>);
 
     return (
-      <div class="col s12 m12 l4">
+      <div class="col s12 m12 l6">
         <div class="card hoverable">
           <div class="card-image">
             <img

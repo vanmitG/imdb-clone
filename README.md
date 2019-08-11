@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Created with love by: An-Khuong
 
-Let's discover the list of the latest movies, using Movie DB API. This is very similar to Google News and was built using React.
+Let's discover the list of the latest movies, using Movie DB API. This is very similar to Google News clone and was built using React.
 
 ## Video Walkthrough
 
@@ -25,6 +25,7 @@ The following **required** functionalities are completed (this is a sample):
 - [x] For each movie, the user can see the Movie Title, Year, Rating, and Poster.
 - [x] The user can see this information clearly on devices of various screen sizes.
 - [x] The user can see "more" movies by tapping a "See More" button at the bottom.
+- [x] [The site can be acessed from the internet](https://agitated-volhard-234f52.netlify.com/)
 
 The following **optional** features are implemented:
 

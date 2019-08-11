@@ -20,3 +20,6 @@
   max-height: 90vh;
   overflow-y: auto;
 }
+.sectionMarginTop {
+  height: 50px;
+}
