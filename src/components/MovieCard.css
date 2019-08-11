@@ -14,3 +14,15 @@ nav {
   top: 0;
   z-index: 5;
 }
+
+.fixedGenres {
+  position: fixed;
+  top: 8vh;
+  z-index: 5;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.marginTopGenre {
+  margin-top: 8vh;
+}

@@ -125,7 +125,7 @@ export default class App extends Component {
           />
           {/* <h3>{`${this.state.movies.length} movies total`}</h3> */}
 
-          <div className="fixedGenres section">
+          <div className="section">
             <GenreSelectionGroup
               genres={this.state.genresData}
               filterMovieByGenre={this.filterMovieByGenre}
@@ -133,7 +133,7 @@ export default class App extends Component {
             />
           </div>
           <div className="row ">
-            <div className="SectionMarginTop">""</div>
+            {/* <div className="SectionMarginTop">""</div> */}
             <div className="right col s12 m12 l10">
               <MovieList movies={this.state.movies} />
             </div>
