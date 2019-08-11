@@ -29,11 +29,22 @@ export default class App extends Component {
   componentDidMount() {
     this.getMovies();
   }
-  getMovieCatergory(name) {
+  getMovieCatergory = name => {
     // console.log("Moive Catergory ID", Source.id);
     console.log("Moive Catergory name", name);
+    // this.getMovies();
+    this.resetMoviesAllMoviesAndDefaultMovieSource(name);
+
+    // resetMoviesAllMoviesAndDefaultMovieSource(name);
     // console.log("Moive Catergory label", Source.lable);
-  }
+  };
+  resetMoviesAllMoviesAndDefaultMovieSource = name => {
+    this.setState(
+      { movies: [], allMovies: [], defaultMovieSource: name, page: 1 },
+      () => this.getMovies()
+    );
+  };
+
   async getMovies() {
     const api_key = "f0a2a5636159ed7a77518d40e60ef4b1";
     const url = ` https://api.themoviedb.org/3/movie/${
@@ -91,7 +102,7 @@ export default class App extends Component {
     this.setState({
       movies: filteredMoviesByGenre
     });
-    console.log("genressssss line 76 filter", this.state.genresData);
+    // console.log("genressssss line 76 filter", this.state.genresData);
   };
 
   addNumberOfMoviesToGenresArray() {
@@ -129,12 +140,19 @@ export default class App extends Component {
           </div>
 
           <footer class="page-footer teal">
-            <button
-              class="waves-effect waves-light btn"
-              onClick={() => this.getMoreMovies(this.state.defaultMovieSource)}
-            >
-              More...
-            </button>
+            <div class="container">
+              <button
+                class="waves-effect waves-light btn"
+                onClick={() =>
+                  this.getMoreMovies(this.state.defaultMovieSource)
+                }
+              >
+                More...
+              </button>
+              <span className="right">{`${
+                this.state.movies.length
+              } movies total`}</span>
+            </div>
             <div class="footer-copyright teal darken-4">
               <div class="container">
                 © 2014 Copyright Text

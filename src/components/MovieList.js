@@ -7,9 +7,11 @@ export class MovieList extends Component {
     return (
       <>
         <div className="row">
-          {movies.map(movie => {
-            return <MovieCard movie={movie} />;
-          })}
+          <div className="container">
+            {movies.map(movie => {
+              return <MovieCard movie={movie} />;
+            })}
+          </div>
         </div>
       </>
     );
