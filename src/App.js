@@ -4,6 +4,7 @@ import MovieList from "./components/MovieList";
 import NabBar from "./components/NavBar";
 import genres from "./utils/genres";
 import GenreSelectionGroup from "./components/GenreSelectionGroup";
+import ReactModal from "react-modal";
 // import M from "materialize-css/dist/js/materialize.min.js";
 
 //this needed when working with first object in array
