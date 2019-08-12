@@ -21,7 +21,8 @@ export default class MovieCard extends Component {
         popularity,
         release_date,
         vote_count,
-        vote_average
+        vote_average,
+        id
       }
     } = this.props;
 
@@ -101,8 +102,11 @@ export default class MovieCard extends Component {
             </p>
           </div>
           <div class="card-action teal darken-3">
-            <a href="#" className="deep-orange-text text-lighten-3">
-              This is a link
+            <a
+              className="deep-orange-text text-lighten-3"
+              onClick={() => console.log("Movie ID", id)}
+            >
+              Watch Trailer
             </a>
           </div>
         </div>
