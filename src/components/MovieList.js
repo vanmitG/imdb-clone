@@ -3,13 +3,13 @@ import MovieCard from "./MovieCard";
 
 export class MovieList extends Component {
   render() {
-    const { movies } = this.props;
+    const { movies, openModal } = this.props;
     return (
       <>
         <div className="row">
           <div className="container">
             {movies.map(movie => {
-              return <MovieCard movie={movie} />;
+              return <MovieCard movie={movie} openModal={openModal} />;
             })}
           </div>
         </div>

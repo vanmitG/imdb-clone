@@ -12,6 +12,7 @@ export default class MovieCard extends Component {
 
   render() {
     const {
+      openModal,
       movie: {
         title,
         overview,
@@ -28,6 +29,7 @@ export default class MovieCard extends Component {
 
     // console.log("genres line 21 ----", genres);
     // console.log("genre_ids line 22 ----", genre_ids);
+    // console.log("MovieCard-props", this.props);
 
     const filteredGenres = genres.filter(genre => genre_ids.includes(genre.id));
     const names = filteredGenres.map(({ name }) => name);
@@ -85,7 +87,7 @@ export default class MovieCard extends Component {
                 </li>
                 <li>
                   <div class="collapsible-header teal lighten-3 flow-text truncate teal-text text-darken-4">
-                    <i class="material-icons">details</i>More ...
+                    <i class="material-icons">details</i>Released {release_date}
                   </div>
                   <div class="collapsible-body teal lighten-5 flow-text deep-orange-text text-darken-2">
                     <p>Popularity: {popularity}</p>
@@ -96,15 +98,11 @@ export default class MovieCard extends Component {
                 </li>
               </ul>
             </div>
-
-            <p className="flow-text deep-orange-text text-darken-4">
-              release date {release_date}
-            </p>
           </div>
           <div class="card-action teal darken-3">
             <a
               className="deep-orange-text text-lighten-3"
-              onClick={() => console.log("Movie ID", id)}
+              onClick={() => openModal(id)}
             >
               Watch Trailer
             </a>
