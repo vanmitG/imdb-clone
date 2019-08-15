@@ -49,7 +49,8 @@ export default class App extends Component {
       { id: 4, name: "popular", lable: "Popular" },
       { id: 5, name: "upcoming", lable: "Upcoming" }
     ],
-    defaultMovieSource: "top_rated"
+    defaultMovieSource: "top_rated",
+    apiKey: process.env.REACT_APP_API_KEY
   };
   componentDidMount() {
     this.getMovies();
@@ -71,7 +72,7 @@ export default class App extends Component {
   };
 
   async getMovies() {
-    const api_key = "f0a2a5636159ed7a77518d40e60ef4b1";
+    const api_key = process.env.REACT_APP_API_KEY;
     const url = ` https://api.themoviedb.org/3/movie/${
       this.state.defaultMovieSource
     }?api_key=${api_key}&page=${this.state.page}`;
@@ -145,8 +146,8 @@ export default class App extends Component {
   };
 
   async getMoviesTrailers(id) {
-    const api_key = "f0a2a5636159ed7a77518d40e60ef4b1";
-    const urlTrailer = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=f0a2a5636159ed7a77518d40e60ef4b1&language=en-US`;
+    const api_Key = process.env.REACT_APP_API_KEY;
+    const urlTrailer = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${api_Key}&language=en-US`;
     // const url = ` https://api.themoviedb.org/3/movie/${
     //   this.state.defaultMovieSource
     // }?api_key=${api_key}&page=${this.state.page}`;
